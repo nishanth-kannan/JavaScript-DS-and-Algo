@@ -153,6 +153,22 @@ class SinglyLinkedList{
         }
         return arr;
     }
+    
+    rotate(num){
+        if(!this.head) return undefined;
+
+        let realNum = num % this.length;
+
+        for(let i = 0; i < realNum; i++){
+            let currentHead = this.head;
+            let newHead = this.head.next;
+            currentHead.next = null;
+            this.tail.next = currentHead;
+            this.tail = currentHead;
+            this.head = newHead;
+        }
+        return this;
+    }
 
 }
 
@@ -172,4 +188,6 @@ console.log(list);
 // list.remove(1);
 // console.log(list.toArr());
 // list.reverse();
-// console.log(list.toArr());
+console.log(list.toArr());
+// console.log(list.reverse().toArr());
+// console.log(list.rotate(999).toArr());   
