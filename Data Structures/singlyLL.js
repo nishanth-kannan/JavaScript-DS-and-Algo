@@ -40,7 +40,7 @@ class SinglyLinkedList{
         this.tail.next = null;
         this.length--;
 
-        if(list.length == 0){ //edge case
+        if(this.length == 0){ //edge case
             this.head = null;
             this.tail = null;
         }
@@ -55,7 +55,7 @@ class SinglyLinkedList{
         currentHead.next = null;
         this.length--;
 
-        if(list.length == 0){ //edge case
+        if(this.length == 0){ //edge case
             this.head = null;
             this.tail = null;
         }
@@ -129,9 +129,9 @@ class SinglyLinkedList{
     }
 
     reverse(){ // reverse linked list
-        let node = list.head; // swap head and tail
-        list.head = list.tail;
-        list.tail = node;
+        let node = this.head; // swap head and tail
+        this.head = this.tail;
+        this.tail = node;
 
         let next;
         let prev = null;
@@ -146,7 +146,7 @@ class SinglyLinkedList{
 
     toArr(){ // function to convert linked list to arr (for visualisation purposes)
         let arr = [];
-        let current = list.head;
+        let current = this.head;
         for(let i = 0; i < this.length; i++){
             arr.push(current.val);
             current = current.next;
